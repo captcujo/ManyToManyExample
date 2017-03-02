@@ -1,0 +1,26 @@
+﻿<div class="container">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Movie Title</th>
+                <th>Director</th>
+                <th>Actors</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{controller.movie.title}}</td>
+                <td>{{controller.movie.director}}</td>
+                <td>
+                <div class="form-group">
+                <label for="Actors">Actor:</label>
+                <!--<select class="form-control" ng-model="controller.movie.movieActors.actorId" ng-options="cat.id as cat.firstName + ' ' + cat.lastName for cat in controller.actors"></select>-->
+                    <select class="form-control" ng-model="controller.movie.actors" ng-options="cat as cat.firstName + ' ' + cat.lastName for cat in controller.actors" multiple></select>
+                </div>
+                </td>
+                <!--<td><button id="{{controller.movie.id}}" class="btn btn-warning" ng-click="controller.deleteMovie()">Delete</button></td>-->
+                <td><button id="{{controller.movie.id}}" class="btn btn-primary" ng-click="controller.addActor(controller.movie.movieActors.actorId)">Add</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div> <!-- end tag of " -->
